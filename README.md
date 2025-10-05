@@ -45,20 +45,9 @@ This pattern ensures that:
 
 ## Testing Results
 [Describe your testing process and results. Include:]
-- Example valid usernames you tested
-- Example invalid usernames and why they fail
+- Example valid usernames you tested (at least two)
+- Example invalid usernames and why they fail (at least two)
 - How you used the username-input file to test
-
-Valid username examples:
-- username
-- dev_user
-- test123
-
-Invalid username examples:
-- Username (starts with uppercase letter)
-- user (too short)
-- user-name (contains hyphen)
-- user1234567890 (too long)
 
 ## Challenges and Solutions
 [Optional: Describe any challenges you encountered while creating this script and how you solved them. This could include debugging issues, understanding regular expressions, or Git workflow problems.]

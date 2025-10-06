@@ -1,13 +1,14 @@
 # README for Username Validation Script
 
 ## Author Information
-- **Name:** [Your Full Name]
-- **Course:** [Course Number and Name]
+- **Name:** Alex Vennebush
+- **Course:** CPSC298 Intro to \*nix
 - **Assignment:** Username Validation
-- **Date:** [Date of Completion]
+- **Date:** 6 October 2025
 
 ## Program Description
-[Write 2-3 sentences in your own words describing what this script does and its purpose. Explain the problem it solves and how it works at a high level.]
+This program verifies a list of usernames against the validation criteria below.
+It iterates through a list, stored in an external file, and in each iteration outputs the username and whether or not it is valid.
 
 ## Username Requirements
 This script validates usernames according to the following rules:
@@ -27,11 +28,12 @@ To test with the provided input file:
 ```
 
 ## How the Script Works
-[Explain in 3-5 sentences how your script validates usernames. Include information about:]
-- The use of the `while` loop
-- The `grep` command with extended regular expressions
-- The meaning of the `-E` and `-v` flags
-- The redirect `> /dev/null 2>&1`
+The script starts by locating the file with the inputs, the usernames to test, and storing it as a list variable.
+It then iterates through each line of the file, which is a single username.
+At each iteration, it runs a `grep` command to check the username against a regex string.
+The `grep` command includes the `-E` flag, which indicates an extended syntax for the regex string,
+and the `-q` flag, which tells the script not to output anything to the user.
+If the `grep` command has an output, the username is valid; if not, the username is not valid.
 
 ## Regular Expression Pattern
 The validation uses the following regular expression pattern:
@@ -43,17 +45,16 @@ This pattern ensures that:
 - The following characters are lowercase letters, digits, or underscores `[a-z0-9_]`
 - The total length is between 3 and 12 characters
 
-## Testing Results
-[Describe your testing process and results. Include:]
-- Example valid usernames you tested (at least two)
-- Example invalid usernames and why they fail (at least two)
-- How you used the username-input file to test
-
-## Challenges and Solutions
-[Optional: Describe any challenges you encountered while creating this script and how you solved them. This could include debugging issues, understanding regular expressions, or Git workflow problems.]
+## Testing and Debugging
+I tested that my script worked by running it with the inputs from the username-input file, since the program wasn't set up to take inputs from the user.
+On my first test, I noticed that a lot of usernames were marked valid that shouldn't have been.
+I realized that this was because I had forgotten the `$` at the end of the regex string,
+so usernames that were too long or contained invalid characters after the third character were accepted,
+because the regex matched the first part of the username.
+After I fixed this problem, every username was marked correctly.
 
 ## Resources
-[List any resources you used (class slides, ChatGPT, etc.). Please refer to the course syllabus for more details on citations.]
+I did not rely on any particular resources besides what was provided in the assignment directions on Canvas. My code is based on the example `zip.sh` file.
 
 ## License
 This project is part of coursework for Chapman University and is intended for educational purposes.

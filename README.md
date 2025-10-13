@@ -17,12 +17,7 @@ This script validates usernames according to the following rules:
 - Must be between 3 and 12 characters in length (inclusive)
 
 ## Usage
-To run the script interactively:
-```bash
-./username.sh
-```
-
-To test with the provided input file:
+The script must be run with the provided input file:
 ```bash
 ./username.sh < username-input
 ```
